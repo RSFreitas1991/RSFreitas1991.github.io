@@ -15,28 +15,25 @@ async function popTable(data) {
   dados.forEach(element => {
     const tr = document.createElement('tr');
     tr.className = element.id;
-    document.querySelector('.coins_table').appendChild(tr)
-    const td_id = document.createElement('td')
+    document.querySelector('.coins_table').appendChild(tr);
+    const td_id = document.createElement('td');
     td_id.innerText = element.id;
-    document.querySelector(`.${element.id}`).appendChild(td_id)
-    const td_symbol = document.createElement('td')
+    document.querySelector(`.${element.id}`).appendChild(td_id);
+    const td_symbol = document.createElement('td');
     td_symbol.innerText = element.symbol;
-    document.querySelector(`.${element.id}`).appendChild(td_symbol)
-    const td_image = document.createElement('td')
+    document.querySelector(`.${element.id}`).appendChild(td_symbol);
+    const td_image = document.createElement('td');
     const img = document.createElement('img');
     img.src = `${element.image}`;
     img.width = '25';
     img.height = '25';
     td_image.appendChild(img);
-    document.querySelector(`.${element.id}`).appendChild(td_image)
-    const td_current_price = document.createElement('td')
+    document.querySelector(`.${element.id}`).appendChild(td_image);
+    const td_current_price = document.createElement('td');
     td_current_price.innerText = element.current_price;
-    document.querySelector(`.${element.id}`).appendChild(td_current_price)
+    document.querySelector(`.${element.id}`).appendChild(td_current_price);
   });
-  console.log(await data)
 }
-
-market_cap_toplist()
 
 window.onload = () => {
   popTable(market_cap_toplist());
